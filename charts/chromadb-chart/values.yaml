@@ -3,10 +3,11 @@
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
-
+# helm upgrade chroma chroma/chromadb -f ./values.yaml
 image:
 #  repository: ghcr.io/chroma-core/chroma
-  repository: quay.io/rhel9dev/chromadb-chart:0.5.3 #ghcr.io/amikos-tech/chromadb-chart/chroma
+  repository: quay.io/rhel9dev/chromadb-chart # 0.5.3  #ghcr.io/chroma-core/chroma:0.5.3
+  #ghcr.io/amikos-tech/chromadb-chart/chroma
   pullPolicy: IfNotPresent
 
 imagePullSecrets: [ ]
@@ -94,7 +95,7 @@ startupProbe:
   initialDelaySeconds: 10
 
 chromadb:
-  apiVersion: "0.4.21"
+  apiVersion: "0.5.3" #"0.4.14"
   allowReset: false
   isPersistent: true
   persistDirectory: /index_data
