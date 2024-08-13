@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
 #  repository: ghcr.io/chroma-core/chroma
-  repository: ghcr.io/amikos-tech/chromadb-chart/chroma
+  repository: quay.io/rhel9dev/chromadb-chart:0.5.3 #ghcr.io/amikos-tech/chromadb-chart/chroma
   pullPolicy: IfNotPresent
 
 imagePullSecrets: [ ]

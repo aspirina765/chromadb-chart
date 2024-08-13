@@ -7,4 +7,6 @@ sudo chown -R chroma:chroma ${PERSIST_DIRECTORY}
 
 . /chroma/venv/bin/activate
 pip install --force-reinstall --no-cache-dir chroma-hnswlib
-uvicorn chromadb.app:app --workers 1 --host ${CHROMA_SERVER_HOST} --port ${CHROMA_SERVER_HTTP_PORT} --proxy-headers --log-config ${CHROMA_SERVER_LOG_CONFIG}
+pip uninstall numpy -y ;
+pip install numpy==1.26.4 ;
+uvicorn chromadb.app:app --workers 1 --host ${CHROMA_SERVER_HOST} --port ${CHROMA_SERVER_HTTP_PORT} --proxy-headers #--log-config ${CHROMA_SERVER_LOG_CONFIG}
